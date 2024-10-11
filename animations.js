@@ -41,4 +41,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
+/***********Hamburger menu*************/
+function showMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  hamburger.style.display = 'flex';
+}
 
+function hideMenu(){
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.style.display = 'none';
+  
+}

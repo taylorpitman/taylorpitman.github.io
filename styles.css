@@ -49,6 +49,8 @@ header {
 
 /* Styles the navbar links */
 .navbar a {
+  display: flex;
+  align-items: center;
   text-decoration: none; /* Removes underline */
   font-family: 'Montserrat', sans-serif; /* Font styling */
   color: #f5f5f5; /* White text */
@@ -68,6 +70,35 @@ header {
   font-size: xx-large;
 
 }
+
+.hamburger {
+  margin: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index:  2000;
+  background-color: #f1dc99b7;
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  
+}
+
+.hamburger li, a{
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  
+}
+
+@media
+
+
 
 /************************** SOCIAL LINKS **************************/
 
@@ -248,22 +279,22 @@ header {
 /* Defines a shake animation for the headshot */
 @keyframes jiggle {
   0%, 30% {
-    transform: translateX(0); /* No movement at start */
+    transform: translateX(0); 
   }
   41% {
-    transform: translateX(5px); /* Move right */
+    transform: translateX(5px); 
   }
   51% {
-    transform: translateX(-5px); /* Move left */
+    transform: translateX(-5px); 
   }
   61% {
-    transform: translateX(5px); /* Move right again */
+    transform: translateX(5px); 
   }
   71% {
-    transform: translateX(-5px); /* Move left again */
+    transform: translateX(-5px);
   }
   81% {
-    transform: translateX(5px); /* Another right move */
+    transform: translateX(5px); 
   }
   91% {
     transform: translateX(-5px); 
@@ -300,7 +331,7 @@ header {
     height: 100%;
     border-radius: 50%; /* Makes the headshot a circle */
     backface-visibility: hidden; /* Hides the backside when flipped */
-    background-size: cover; /* Ensures the image covers the entire circle */
+    background-size: cover;  /*Ensures the image covers the entire circle */
     background-position: center;
     background-repeat: no-repeat; /* Prevents image repetition */
     cursor: pointer;
@@ -310,7 +341,7 @@ header {
 /* Front side of the headshot */
 .headshot-front {
     background:
-    url('images/pfp.png'), /* photo layer */
+    url('images/pfp.png'), 
     linear-gradient(to bottom left, #e89a9a, #ffc5c5); /* Pink background */
 
     background-position: center;
@@ -321,7 +352,7 @@ header {
 /* Back side of the headshot */
 .headshot-back {
   background:
-    url('images/headshot..jpg'), /* photo layer */
+    url('images/headshot..jpg'),
     linear-gradient(to bottom right, rgba(51,51,51), rgb(91, 91, 91)); 
 
     background-position: center;
@@ -337,11 +368,11 @@ header {
 
 /************************** PROJECTS **************************/
 .projects {
-  padding-top: 55px; /* Adjust this value depending on the height of your navbar */
+  padding-top: 55px; 
 }
 .project-icon {
 
-  width: 200px; /* Adjust the size as needed */
+  width: 200px; 
   height: auto; /* Maintains the aspect ratio */
   margin-bottom: 15px; /* Adds space between the icon and the title */
   display: block;
@@ -414,12 +445,13 @@ header {
 }
 
 /************************** CONTACT FORM **************************/
+
 /* Styling for the Contact Me section */
 .contact-me {
   background: linear-gradient(to top, rgb(196, 159, 255), rgb(227, 210, 255));
   padding: 50px; /* Adds padding around the section */
   text-align: center; /* Centers text */
-  border-radius: 10px; /* Rounded edges for the section */
+  border-radius: 10px; 
   margin-top: 200px;
 }
 
@@ -446,7 +478,7 @@ header {
 }
 /* Styles for the icons */
 .contact-icon {
-  width: 40px; /* Adjust size of the icon */
+  width: 40px; 
   height: 40px;
   margin-right: 12px; /* Space between icon and text */
   transition: transform 0.3s ease;
@@ -481,6 +513,3 @@ header {
   opacity: 1;
   transform: translateY(0); /* Bring the element to its original position */
 }
-
-
-/*********FOOTER*********/

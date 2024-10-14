@@ -43,12 +43,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /***********Hamburger menu*************/
 function showMenu() {
-  const hamburger = document.querySelector('.hamburger');
+  const hamburger = document.querySelector('.hamburger-container');
   hamburger.style.display = 'flex';
+  hamburger.classList.add('active');
 }
 
 function hideMenu(){
-    const hamburger = document.querySelector('.hamburger');
+    const hamburger = document.querySelector('.hamburger-container');
     hamburger.style.display = 'none';
-  
+    hamburger.classList.remove('active'); 
+}
+function toggleMenu() {
+  const menu = document.getElementById('hamburgerMenu');
+  menu.classList.toggle('open');
 }

@@ -1,174 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taylor Pitman</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
-    
-</head>
-<body>
-
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css"
+    />
+  </head>
+  <body>
     <header>
+      <!-- Name on the left -->
+      <div class="name">
+        <h2>Taylor Pitman</h2>
+      </div>
 
-        <!-- Name on the left -->
-        <div class="name">
-            <h2>Taylor Pitman</h2>
+      <!-- Navbar with the links in the center -->
+
+      <div class="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#crafts">Crafts</a></li>
+          <!-- <li><a href=#blog">Blog</a> -->
+          <li><a href="images\PitmanResume.pdf" target="_blank">Resume</a></li>
+          <!-- <li><a href="#about">About</a></li> -->
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="hamburger-container" id="hamburgerMenu">
+        <span class="hideButton" onclick="toggleMenu()">
+          <a
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="28px"
+              viewBox="0 -960 960 960"
+              width="28        px"
+              fill="#333"
+            >
+              <path
+                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+              />
+            </svg>
+          </a>
+        </span>
+        <div class="hamburger">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#crafts">Crafts</a></li>
+            <!-- <li><a href=#blog">Blog</a> -->
+            <!-- <li><a href=#resume>Resume</a> -->
+            <!-- <li><a href="#about">About</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
-    
-        <!-- Navbar with the links in the center -->
-         
+      </div>
 
+      <!-- Social media icons on the right -->
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/taylor-pitman-6107b91b8/"
+          target="_blank"
+          class="linkedin-circle"
+        >
+          <img src="images/linkedin.webp" alt="LinkedIn" />
+        </a>
+        <a
+          href="https://github.com/taylorpitman"
+          target="_blank"
+          class="github-circle"
+        >
+          <img src="images/github.png" alt="GitHub" />
+        </a>
+      </div>
 
-        <div class="navbar"  >
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#crafts">Crafts</a></li>
-                <!-- <li><a href=#blog">Blog</a> -->
-                <!-- <li><a href=#resume>Resume</a> -->
-                <!-- <li><a href="#about">About</a></li> -->
-                <li><a href="#contact">Contact</a></li>
-
-            </ul>        
-            
-        </div>
-
-        <div class="hamburger-container" id="hamburgerMenu">
-            <span class= "hideButton" onclick="toggleMenu()"> 
-                <a><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28        px" fill="#333">
-                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-                </a>
-            </span>
-            <div class="hamburger" >
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#crafts">Crafts</a></li>
-                    <!-- <li><a href=#blog">Blog</a> -->
-                    <!-- <li><a href=#resume>Resume</a> -->
-                    <!-- <li><a href="#about">About</a></li> -->
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                
-            </div>
-        </div>
-    
-        <!-- Social media icons on the right -->
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/taylor-pitman-6107b91b8/" target="_blank" class="linkedin-circle">
-                <img src="images/linkedin.webp" alt="LinkedIn" />
-            </a>
-            <a href="https://github.com/taylorpitman" target="_blank" class="github-circle">
-                <img src="images/github.png" alt="GitHub" />
-            </a>
-        </div>
-
-        <div class= "menuButton" onclick="toggleMenu()">
-            <a>
-                <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#f1dc99">
-                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-                </svg>
-            </a>
-        </div>
+      <div class="menuButton" onclick="toggleMenu()">
+        <a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="28px"
+            viewBox="0 -960 960 960"
+            width="28px"
+            fill="#f1dc99"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </a>
+      </div>
     </header>
 
     <section class="welcome" id="home">
-        <div class="headshot-container">  
-            <div class="flip-container" id="flipContainer">
-                <div class="flipper">
-                    <div class="headshot-front"></div>
-                    <div class="headshot-back"></div>    
-                </div> 
-            </div>
+      <div class="headshot-container">
+        <div class="flip-container" id="flipContainer">
+          <div class="flipper">
+            <div class="headshot-front"></div>
+            <div class="headshot-back"></div>
+          </div>
         </div>
-        
-        
-        <div class="text-screen">
+      </div>
 
-                <div class= "hello"> 
-                    <h2>Welcome, I'm Taylor</h2>
-                    <p class="location">based in the <br>US <span class="flag-icon flag-icon-us"></span></p>
-                </div>
-                <div class= "full">
-                    <h2>FULL</h2>
-                    <div class="contact-container">
-                        <a href="#contact" class="contactbutton">
-                            <p>Let's connect</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="stack">
-                    <p class="school">Undergraduate<br>Student</p>
-                    <h2>STACK</h2>
-                </div>
-                <div class="developer">
-                    <h2>DEVELOPER</h2>
-                </div>        
-                
-        </div> 
-        
+      <div class="text-screen">
+        <div class="hello">
+          <h2>Welcome, I'm Taylor</h2>
+          <p class="location">
+            based in the <br />US <span class="flag-icon flag-icon-us"></span>
+          </p>
+        </div>
+        <div class="full">
+          <h2>FULL</h2>
+          <div class="contact-container">
+            <a href="#contact" class="contactbutton">
+              <p>Let's connect</p>
+            </a>
+          </div>
+        </div>
+        <div class="stack">
+          <p class="school">Undergraduate<br />Student</p>
+          <h2>STACK</h2>
+        </div>
+        <div class="developer">
+          <h2>DEVELOPER</h2>
+        </div>
+      </div>
     </section>
-
-
 
     <section class="projects" id="crafts">
-        <div class = "hidden">
-            <h1>Crafts</h1>
+      <div class="hidden">
+        <h1>Crafts</h1>
 
-            <div class="projects-grid">
+        <div class="projects-grid">
+          <a
+            href="https://github.com/taylorpitman/2D-Platformer-Game"
+            target="_blank"
+            class="project-card"
+          >
+            <img
+              src="images/platformergame.png"
+              alt="hand draw character jumping"
+              class="project-icon"
+            />
+            <h3>2D Platformer Game</h3>
+            <p>Java, AWT, Swing</p>
+          </a>
+          <a href="" target="_blank" class="project-card">
+            <img
+              src="images/ecommerce.png"
+              alt="hand draw character jumping"
+              class="project-icon"
+            />
+            <h3>E-commerce Website</h3>
+            <p>In Progress - coming soon</p>
+          </a>
+          <a href="" target="_blank" class="project-card">
+            <img
+              src="images/aibot.png"
+              alt="hand draw character jumping"
+              class="project-icon"
+            />
+            <h3>AI Assistant</h3>
+            <p>In Progress - coming soon</p>
+          </a>
+          <a href="" target="_blank" class="project-card">
+            <img
+              src="images/comingsoon.png"
+              alt="hand draw character jumping"
+              class="project-icon"
+            />
 
-                <a href="https://github.com/taylorpitman/2D-Platformer-Game" target="_blank" class="project-card">
-                    <img src="images/platformergame.png" alt="hand draw character jumping" class="project-icon">
-                    <h3>2D Platformer Game</h3>
-                    <p>Java, AWT, Swing</p>
-                </a>
-                <a href="" target="_blank" class="project-card">
-                    <img src="images/ecommerce.png" alt="hand draw character jumping" class="project-icon">
-                    <h3>E-commerce Website</h3>
-                    <p>In Progress - coming soon</p>
-                </a>
-                <a href="" target="_blank" class="project-card">
-                    <img src="images/aibot.png" alt="hand draw character jumping" class="project-icon">
-                    <h3>AI Assistant</h3>
-                    <p>In Progress - coming soon</p>
-                </a>
-                <a href="" target="_blank" class="project-card">
-                    <img src="images/comingsoon.png" alt="hand draw character jumping" class="project-icon">
+            <h3>More Coming soon...</h3>
 
-                    <h3>More Coming soon...</h3>
-
-                    <p>:)</p>
-
-                </a>
-            </div>
+            <p>:)</p>
+          </a>
         </div>
-
+      </div>
     </section>
 
-
     <section class="contact-me" id="contact">
-        <div class="hidden">
-            <h2>Contact Me</h2>
-            <div class="contact-options">
-                <a href="mailto:taylordianebusiness@gmail.com" class="contact-item">
-                    <img src="images/emailicon.png" alt="Email" class="contact-icon">
-                    <span class="contact-link">taylordianebusiness@gmail.com</span>
-                </a>
-                <a href="https://www.linkedin.com/in/taylor-pitman-6107b91b8/" target="_blank" class="contact-item">
-                    <img src="images/linkedin.webp" alt="LinkedIn" class="contact-icon">
-                    <span class="contact-link">LinkedIn</span>
-                </a>
-            </div>
+      <div class="hidden">
+        <h2>Contact Me</h2>
+        <div class="contact-options">
+          <a href="mailto:taylordianebusiness@gmail.com" class="contact-item">
+            <img src="images/emailicon.png" alt="Email" class="contact-icon" />
+            <span class="contact-link">taylordianebusiness@gmail.com</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/taylor-pitman-6107b91b8/"
+            target="_blank"
+            class="contact-item"
+          >
+            <img
+              src="images/linkedin.webp"
+              alt="LinkedIn"
+              class="contact-icon"
+            />
+            <span class="contact-link">LinkedIn</span>
+          </a>
         </div>
-
-      </section>
-      
+      </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Taylor Pitman. All Rights Reserved.</p>
+      <p>&copy; 2024 Taylor Pitman. All Rights Reserved.</p>
     </footer>
 
     <script src="animations.js"></script>
-    
-</body>
+  </body>
 </html>

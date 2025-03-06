@@ -40,78 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.skills-track');
-  
-  // Function to calculate total width of all items
-  const calculateTotalWidth = () => {
-    const items = track.querySelectorAll('.skill-item');
-    const screenWidth = window.innerWidth;
-    const itemsWidth = Array.from(items).reduce((total, item) => {
-      const style = window.getComputedStyle(item);
-      const width = item.offsetWidth +
-        parseInt(style.marginLeft) +
-        parseInt(style.marginRight) +
-        parseInt(style.gap);
-      return total + width;
-    }, 0);
-    
-    // Ensure the width is at least the screen width
-    return Math.max(screenWidth, itemsWidth);
-  };
-
-  // Function to duplicate items for seamless scroll
-  const setupScroll = () => {
-    // Clear existing duplicates
-    track.innerHTML = track.innerHTML.split('<!-- Duplicate set -->')[0];
-    
-    // Add duplicate sets until we exceed screen width
-    const originalItems = track.innerHTML;
-    let currentWidth = 0;
-    const screenWidth = window.innerWidth;
-    
-    while (currentWidth < screenWidth * 2) {
-      track.innerHTML += originalItems;
-      currentWidth += calculateTotalWidth();
-    }
-    
-    // Calculate and set widths
-    const totalWidth = calculateTotalWidth();
-    track.style.width = `${totalWidth * 2}px`; // Double the width for seamless scroll
-    
-    // Update animation
-    const styleSheet = document.styleSheets[0];
-    const existingRuleIndex = Array.from(styleSheet.cssRules).findIndex(rule => rule.name === 'scroll');
-    if (existingRuleIndex !== -1) {
-      styleSheet.deleteRule(existingRuleIndex);
-    }
-    
-    styleSheet.insertRule(`
-      @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-${totalWidth}px); }
-      }
-    `, styleSheet.cssRules.length);
-  };
-
-  // Initial setup
-  setupScroll();
-
-  // Update on resize with debounce
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(setupScroll, 100);
-  });
-
-  // Pause animation when not in viewport
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      track.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
-    });
-  });
-  observer.observe(document.querySelector('.skills-carousel'));
-});
 
 /***********Hamburger menu*************/
 function showMenu() {
@@ -129,4 +57,18 @@ function toggleMenu() {
   const menu = document.getElementById('hamburgerMenu');
   menu.classList.toggle('open');
 }
+
+
+/*********Tech Stack Scroll **********/
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".skills-track");
+  const items = document.querySelectorAll(".skill-item");
+  
+  // Clone items to make the scrolling seamless
+  items.forEach(item => {
+      let clone = item.cloneNode(true);
+      track.appendChild(clone);
+  });
+});
 

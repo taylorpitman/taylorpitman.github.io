@@ -59,16 +59,4 @@ function toggleMenu() {
 }
 
 
-/*********Tech Stack Scroll **********/
-
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".skills-track");
-  const items = document.querySelectorAll(".skill-item");
-  
-  // Clone items to make the scrolling seamless
-  items.forEach(item => {
-      let clone = item.cloneNode(true);
-      track.appendChild(clone);
-  });
-});
 

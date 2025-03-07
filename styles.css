@@ -14,6 +14,12 @@ body {
     min-height: 100vh; /* Ensure the gradient covers the full height of the page */
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
 /************************** NAVIGATION BAR **************************/
 
 /* Overall layout for the header */
@@ -449,7 +455,7 @@ header {
   padding: 50px; /* Adds padding around the section */
   text-align: center; /* Centers text */
   border-radius: 10px; 
-  margin-top: 200px;
+
 }
 
 /* Styles for the section title */
@@ -593,10 +599,10 @@ header {
 
 .skills {
   display: flex;
-  margin-bottom: 30vh;
+
   text-align: center;
   max-width: 2440px;
-  width: 100vw;
+  width: 100%;
 }
 
 .skills-title {
@@ -699,14 +705,19 @@ header {
 
 @media(max-width: 755px)
 {
-  /*re aligns text under headshot*/
-  .text-screen {
-    transform: translateY(-150px);
+  .welcome {
+    padding: 20px;
+    margin-top: 75px;
+    flex-direction: column;
+  }
+
+  .skills-track {
+    animation: scroll 15s linear infinite;
   }
 
 }
 
-/*****SCROLL*****/
+
 .hidden {
   opacity: 0; /* Make the elements invisible */
   transform: translateY(20px); /* Move the elements down */

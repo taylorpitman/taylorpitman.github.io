@@ -582,85 +582,64 @@ header {
 
 /* Add this before the skills section */
 @keyframes scroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(calc(-50%));
+  to {
+    transform: translateX(-100%); /* Moves full width of cloned items */
+
   }
 }
+
 .skills {
-  padding: 4rem 0;
-  overflow: hidden;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-/* Update the skills-carousel class */
-.skills-carousel {
-  position: relative;
-  width: 100vw;
-  overflow: hidden;
-  padding: 20px 0;
-  margin: 0 auto;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.skills h1 {
+  margin-bottom: 30vh;
   text-align: center;
-  font-size: 3rem;
-  color: #f5f5f5;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
+  max-width: 2440px;
+  width: 100vw;
 }
 
-/* Update the skills-track class */
-.skills-track {
-  display: flex;
-  width: fit-content;
-  background: #ff8995;
-  box-shadow: white 0px 0px 5px;
-  padding: 20px;
-  gap: 20px;
-  animation: scroll 50s linear infinite;
-  will-change: transform;
+.skills-title {
+  color: white; 
+  width: 100vw;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+}
 
+.skills-carousel {
+  background-color: #fef2dc;
+  box-shadow: rgba(255, 255, 255, 0.695) 0px 0px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+
+}
+
+
+.skills-track {
+  display: inline-flex;
+  gap: 20px;
+  animation: scroll 35s linear infinite;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  padding: 1rem 2rem;
-  margin: 0 1rem;
-  color: #333;
-  border-radius: 30px;
-  width: 60px;
-  border: 2px solid white;
+  width: 70px;
+  padding: 20px;
+  padding-right:60px;
+  transition: all 0.3s ease-in-out;
 
-  white-space: nowrap;
-  transition: transform 0.3s ease;
 }
 
-.skill-item:hover{
-  transform: translateY(-5px);
-  background: #f1d4ff;
-  
+
+.skill-item:hover {
+  transform: scale(1.2);
 }
-/* Add pause on hover */
+
 .skills-carousel:hover .skills-track {
   animation-play-state: paused;
 }
-
-.skills-track {
-  animation-play-state: running;
-}
-
 
 
 /*********MOBILE UI*********/

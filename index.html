@@ -11,6 +11,18 @@
     />
   </head>
   <body>
+    <!-- Construction Banner -->
+    <div id="construction-banner" class="construction-banner">
+      🚧 <strong>Heads up!</strong>This site is currently undergoing a re-design. Feel free to explore while I work behind the scenes on a new and improved version! 🚧
+      <button
+        class="construction-banner-close"
+        onclick="document.getElementById('construction-banner').style.display='none'"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+    </div>
+
     <header>
       <!-- Name on the left -->
       <div class="name">
@@ -23,7 +35,7 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#crafts">Crafts</a></li>
+          <li><a href="#projects">Projects</a></li>
           <!-- <li><a href=#blog">Blog</a> -->
           <li><a href="images\PitmanResume.pdf" target="_blank">Resume</a></li>
           <!-- <li><a href="#about">About</a></li> -->
@@ -37,7 +49,7 @@
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               height="28px"
-              viewBox="0 -960 960 960"
+              viewBox="http://www.w3.org/2000/svg"
               width="28        px"
               fill="#333"
             >
@@ -51,7 +63,7 @@
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#crafts">Crafts</a></li>
+            <li><a href="#projects">Projects</a></li>
             <!-- <li><a href=#blog">Blog</a> -->
             <li><a href="images\PitmanResume.pdf" target="_blank">Resume</a></li>
             <!-- <li><a href="#about">About</a></li> -->
@@ -83,7 +95,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="28px"
-            viewBox="0 -960 960 960"
+            viewBox="http://www.w3.org/2000/svg"
             width="28px"
             fill="#f1dc99"
           >
@@ -167,7 +179,7 @@
 
     <section class="projects" id="crafts">
       <div class="hidden">
-        <h1>Crafts</h1>
+        <h1>Recent Projects</h1>
 
         <div class="projects-grid">
           <a href="https://nyacewomen.org/" target="_blank" class="project-card">
@@ -178,7 +190,7 @@
             />
             <h3>NYS Women’s Network Website </h3>
             <p>WordPress, HTML/CSS, PHP, JavaScript</p>
-            <p>Nov. 2024 -Present</p>
+            <p>Nov. 2024 - May 2025</p>
           </a>
 
           <a href="https://github.com/taylorpitman/NewPaltz-CS-Lab-Website" target="_blank" class="project-card">
@@ -189,7 +201,7 @@
             />
             <h3>SUNY New Paltz CS Lab Website</h3>
             <p>React, TailwindCSS, JavaScript, HTML, Express, SQL/MariaDB</p>
-            <p>Expected Deployment Date: May 2025</p>
+            <p>Feb. 2025 - May 2025</p>
           </a>
           <a href = "https://github.com/taylorpitman/Web-Server-Final-Project" target="_blank" class="project-card">
             <img
@@ -199,7 +211,7 @@
             />
             <h3>Study Session Social Media App</h3>
             <p>Vue, Typescript, Bulma, Express </p>
-            <p>Expected Deployment Date: May 2025</p>
+            <p>Feb. 2025 - May 2025</p>
           </a>
           <a
           href="https://github.com/taylorpitman/2D-Platformer-Game"
@@ -247,3 +259,4 @@
     <script src="animations.js"></script>
   </body>
 </html>
+

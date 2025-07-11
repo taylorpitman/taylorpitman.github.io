@@ -1,4 +1,4 @@
-<h1>🚀 Process</h1>
+<h1>🚀 Process (Aug 2024) </h1>
 This portfolio website was built with a clear emphasis on modern design, usability, and a smooth user experience. I started by designing the layout using HTML5 for structure and CSS3 for styling, incorporating media queries to ensure full responsiveness on desktops, tablets, and mobile devices. The layout was tested across different screen sizes to maintain a seamless experience.
 
 JavaScript was used to introduce dynamic features like smooth scrolling navigation, hover animations, and interactive content display, especially in the project section. For example, the "Projects" grid showcases my work in a highly visual manner with hover effects that change background colors and elevate the project cards.

@@ -2,8 +2,7 @@ import React from 'react';
 import { BiHomeAlt } from "react-icons/bi";
 import { FiGithub } from "react-icons/fi";
 import { TbBrandLinkedin } from "react-icons/tb";
-import HamburgerButton from './hamburgerButton.jsx';
-
+import HamburgerMenu from './HamburgerMenu/hamburgerMenu.jsx';
 
 
 const NavBar = () => {
@@ -75,10 +74,11 @@ const NavBar = () => {
         </nav>
         
         {/* Mobile Menu */}
-            <div className=" sm:hidden flex items-center justify-between border text-zinc-700 border-zinc-200 w-full px-5 py-4">
-                <a href="/" className="flex justify-center items-center hover:text-zinc-500  transition-color ease-in-out duration-200 " aria-label="Home"><BiHomeAlt size={26} /></a>
-                <HamburgerButton />
-            </div>
+        <div className="sm:hidden">
+            <HamburgerMenu />
+        </div>
+        
+
         </>
 
 

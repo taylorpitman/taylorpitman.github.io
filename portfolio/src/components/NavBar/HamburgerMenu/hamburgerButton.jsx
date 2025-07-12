@@ -1,18 +1,16 @@
-import {useState} from 'react';
-import { motion, MotionConfig} from "motion/react"
+import {motion, MotionConfig} from "motion/react"
 
-const HamburgerButton = () => {
+const HamburgerButton = ({isOpen, toggle}) => {
 
-    const [isOpen, setIsOpen] = useState(false);
     return (
         <MotionConfig 
             transition={{
-                duration: 0.5,
+                duration: .3,
                 ease: "easeInOut",
         }}>
             <motion.button
                 className="relative w-10 h-10 rounded-full group hover:cursor-pointer  ease-in-out transition-colors duration-300"
-                onClick={() => setIsOpen((isOpen) => !isOpen)}
+                onClick={toggle}
                 aria-label="Toggle Menu"
                 animate={ isOpen ? "open" : "closed" }
             

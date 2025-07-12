@@ -2,11 +2,13 @@ import React from 'react';
 import { BiHomeAlt } from "react-icons/bi";
 import { FiGithub } from "react-icons/fi";
 import { TbBrandLinkedin } from "react-icons/tb";
+import HamburgerButton from './hamburgerButton.jsx';
 
 
 
 const NavBar = () => {
     return (
+        <>
         <nav className="hidden sm:flex items-center justify-center fixed top-10 z-50  px-4 py-3 w-full">
             <div className = "flex items-center  px-4 py-2 rounded-2xl border border-zinc-200 bg-white/80 backdrop-blur-lg   text-zinc-700 w-fit">
 
@@ -68,11 +70,19 @@ const NavBar = () => {
                         <TbBrandLinkedin size={24} />
                     </a>
                 </div>
-
-
-
             </div>
+
         </nav>
+        
+        {/* Mobile Menu */}
+            <div className=" sm:hidden flex items-center justify-between border text-zinc-700 border-zinc-200 w-full px-5 py-4">
+                <a href="/" className="flex justify-center items-center hover:text-zinc-500  transition-color ease-in-out duration-200 " aria-label="Home"><BiHomeAlt size={26} /></a>
+                <HamburgerButton />
+            </div>
+        </>
+
+
+
     );
 };
 

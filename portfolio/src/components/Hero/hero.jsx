@@ -10,7 +10,7 @@ const Hero = () => {
                 {/*Headshot */}
         <div className = " flex justify-center  w-full">
             <div className = "flex flex-col gap-4 justify-center items-center w-36 sm:min-h-full sm:justify-start">
-                <img src={lamp} alt="Lamp" className='cursor-pointer hover:scale-110 transition-transform duration-200' />
+                <img src={lamp} alt="Lamp" className='cursor-pointer hover:scale-105 transition-transform duration-200' />
                 <img src={headshot} alt="Headshot" className="w-sm sm:w-md rounded-full shadow-lg" />
                 <button className="inline-flex justify-center items-center gap-2.5 font-medium transition-colors 
                 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-zinc-900 text-white hover:bg-zinc-800 

@@ -1,3 +1,5 @@
+<h1>Hello! My website is currently going under a re-design! Stay tuned!!</h1>
+
 <h1>🚀 Process (Aug 2024) </h1>
 This portfolio website was built with a clear emphasis on modern design, usability, and a smooth user experience. I started by designing the layout using HTML5 for structure and CSS3 for styling, incorporating media queries to ensure full responsiveness on desktops, tablets, and mobile devices. The layout was tested across different screen sizes to maintain a seamless experience.
 

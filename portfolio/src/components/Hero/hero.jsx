@@ -26,7 +26,7 @@ const Hero = () => {
                     <span className="text-center sm:text-left sm:px-2 text-lg sm:text-sm "> 
                         I thrive in the code space and I'm currently
                         diving into UI/UX and graphic design to 
-                        bridge the gap between design and development
+                        bridge the gap between design and development.
                     </span>
             </div>
         </div>

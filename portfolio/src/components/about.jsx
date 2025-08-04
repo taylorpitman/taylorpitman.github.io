@@ -7,24 +7,23 @@ const About = () => {
     return (
         <div className="flex-col max-w-2xl mt-20 mx-auto justify-center flex px-8 md:px-6 gap-4 text-zinc-900">
             <h1 className="text-2xl font-semibold">About Me</h1>
-            <div className="flex-col gap-5">
-                   <p>I’m Taylor Pitman — front-end developer with a passion for clean code, sharp UI, and seamless UX. Based in New York, building for the web everywhere.</p>
+            <div className="flex flex-col gap-4">
+                   <p>I’m Taylor Pitman, <strong>a front-end developer</strong> with a growing passion for <strong>clean code, sharp UI, and seamless UX.</strong> </p>
 
                    <p>
-                    What do I actually do? I take your clunky, confusing interfaces and turn them into responsive, accessible experiences that work — not just look nice in a mockup.
-                    Most designers can’t code. Most developers can’t design. I live in the overlap. While others debate pixel margins, I’m shipping fast, intuitive interfaces that hit 
-                    both performance and accessibility benchmarks. WCAG compliance? Non-negotiable.
+                    With a Computer Science degree and <strong>hands-on experience</strong> building and deploying web applications, I know how to ship functional, responsive websites.
+                    But now, in post-grad life, I’m focused on <strong>standing out through aesthetics and design.</strong>
                    </p>
 
                     <p>
-                    I’ve built full-stack platforms, rebranded client websites, and even designed an AI-powered portfolio assistant — all from scratch. When I say I understand both front-end and backend, I mean I’ve deployed it.
-                    The result? Interfaces that not only impress — they convert.
+                    I’m diving into the UI/UX world to bridge the gap between clean code and great user experiences. My goal is to create projects that aren’t 
+                    just technically solid, but visually impactful from start to finish.
                     </p>
 
-                    <p>Outside of code, you’ll find me lifting at the gym, reading fantasy novels, or tweaking layouts for fun. I’ll take a hot chocolate over coffee any day.</p>
+                    <p>Outside of code & design, you’ll find me lifting at the gym, reading fantasy novels, or knitting my wardrobe.</p>
 
-                    <p>I don’t just build websites. I build web experiences that work.</p>
-            </div>
+                    <strong>I don’t just build websites. I build web experiences that work.</strong>
+            </div>  
         </div>
     )
 

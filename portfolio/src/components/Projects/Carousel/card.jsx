@@ -1,4 +1,5 @@
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { motion } from "motion/react";
 
 const Card = ({ img, title, description, link, technologies }) => {
 
@@ -8,8 +9,29 @@ const Card = ({ img, title, description, link, technologies }) => {
         "bg-orange-300",
         "bg-emerald-300",
     ]
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: -20 },
+        show: { opacity: 1, y: 0, transition: { duration: .3 } },
+    };
+
+    const tagVariants = {
+        hidden: { opacity: 0 },
+        show: { opacity: 1, transition: { duration: 0.3 } },
+    };
+
   return (
-    <div className="relative  
+    <motion.div className="relative  
                     aspect-[3/2] w-full rounded-2xl  
                     m-2 p-4 
                     flex flex-col items-center justify-center 
@@ -27,18 +49,33 @@ const Card = ({ img, title, description, link, technologies }) => {
       <div className="absolute inset-0 bg-zinc-900 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
 
       {/* Text content */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-12 flex flex-col gap-2 items-center justify-center text-white text-center px-4">
-        <h2 className="text-2xl font-semibold">{title}</h2>
-        <p className="text-sm px-8 py-2 mb-2">{description}</p>
+      <motion.div className="absolute inset-0 z-12 
+                      flex flex-col items-center justify-center
+                      gap-1 sm:gap-2 px-4
+                      text-white text-center "
+                      
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileHover="show">
 
-        <div className="flex flex-wrap gap-2">
+        <motion.h2 className="text-md sm:text-2xl font-semibold"
+                    variants={itemVariants}>
+                    {title}
+        </motion.h2>
+        <motion.p className="text-xs sm:text-sm px-8 py-1 mb-2"
+                    variants={itemVariants}>
+                    {description}
+        </motion.p>
+
+        <motion.div className="flex flex-wrap gap-1 w-3/4 items-center justify-center sm:gap-2">
           {technologies.map((technology, index) => (
-            <span key={technology} className={`text-xs ${colors[index % colors.length]} px-2 py-1 rounded-md text-zinc-900 hover:scale-110 transition-transform duration-300 cursor-pointer`}>
+            <motion.span key={technology} className={`text-xs ${colors[index % colors.length]} text-xs sm:text-sm px-2 py-1 rounded-md text-zinc-900 hover:scale-110 transition-transform duration-300 cursor-pointer`}
+              variants={tagVariants}>
               {technology}
-            </span>
+            </motion.span>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
         {/*link CTA button */}
         <div className="absolute z-15 
@@ -47,19 +84,21 @@ const Card = ({ img, title, description, link, technologies }) => {
                     rounded-tl-[50%]
                     aspect-square w-1/5
                     bg-zinc-50">
+
             {/*Circle with arrow icon */}
             <a href={link} 
             target="_blank"
             className="flex justify-center items-center 
                             w-3/5 aspect-square rounded-full 
                             hover:scale-110 transition-transform duration-300 cursor-pointer
-                            bg-zinc-900">
+                            bg-zinc-900
+                            focus:outline-none focus:ring-2 focus:ring-offset-2">
 
                 {/* make arrow responsive size  */}
                 <MdOutlineArrowOutward size={36} className=" text-white" />
             </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

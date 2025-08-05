@@ -1,14 +1,8 @@
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { motion } from "motion/react";
+import { colors } from "../../../constants/colors.js";
 
 const Card = ({ img, title, description, link, technologies }) => {
-
-    const colors = [
-        "bg-rose-300",
-        "bg-green-300",
-        "bg-orange-300",
-        "bg-emerald-300",
-    ]
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -69,7 +63,7 @@ const Card = ({ img, title, description, link, technologies }) => {
 
         <motion.div className="flex flex-wrap gap-1 w-3/4 items-center justify-center sm:gap-2">
           {technologies.map((technology, index) => (
-            <motion.span key={technology} className={`text-xs ${colors[index % colors.length]} text-xs sm:text-sm px-2 py-1 rounded-md text-zinc-900 hover:scale-110 transition-transform duration-300 cursor-pointer`}
+            <motion.span key={technology} className={`text-xs bg-${colors[index % colors.length]} text-xs sm:text-sm px-2 py-1 rounded-md text-zinc-900 hover:scale-110 transition-transform duration-300 cursor-pointer`}
               variants={tagVariants}>
               {technology}
             </motion.span>

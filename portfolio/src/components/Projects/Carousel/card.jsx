@@ -1,31 +1,63 @@
 import { MdOutlineArrowOutward } from "react-icons/md";
 
-const Card = ({ title, description, link }) => {
+const Card = ({ img, title, description, link, technologies }) => {
+
+    const colors = [
+        "bg-rose-300",
+        "bg-green-300",
+        "bg-orange-300",
+        "bg-emerald-300",
+    ]
   return (
-    <div className="relative p-4 bg-stone-200 aspect-[3/2] w-full rounded-xl  m-2 flex flex-col items-center justify-center group overflow-hidden">
+    <div className="relative  
+                    aspect-[3/2] w-full rounded-2xl  
+                    m-2 p-4 
+                    flex flex-col items-center justify-center 
+                    group overflow-hidden
+                    bg-[url(img)] bg-cover bg-center
+                    hover:shadow-xl transition-shadow duration-300
+                    ">
+
+    <img
+        src={img}
+        alt=""
+        className="absolute inset-0 object-cover w-full h-full"
+    />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
+      <div className="absolute inset-0 bg-zinc-900 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10" />
 
       {/* Text content */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex flex-col items-center justify-center text-white text-center px-4">
-        <h2 className="text-lg font-semibold">{title}</h2>
-        <p className="text-sm mb-2">{description}</p>
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="italic hover:underline"
-          >
-            Link to repo
-          </a>
-        )}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-12 flex flex-col gap-2 items-center justify-center text-white text-center px-4">
+        <h2 className="text-2xl font-semibold">{title}</h2>
+        <p className="text-sm px-8 py-2 mb-2">{description}</p>
+
+        <div className="flex flex-wrap gap-2">
+          {technologies.map((technology, index) => (
+            <span key={technology} className={`text-xs ${colors[index % colors.length]} px-2 py-1 rounded-md text-zinc-900 hover:scale-110 transition-transform duration-300 cursor-pointer`}>
+              {technology}
+            </span>
+          ))}
+        </div>
       </div>
 
-        <div className="absolute opacity-0 group-hover:opacity-100 flex justify-center items-center -bottom-1 -right-1 rounded-tl-[50%] z-0 aspect-square w-32 h-32 rounded-xl bg-white ">
-            <div className="flex justify-center items-center w-24 h-24 bg-stone-200 rounded-full z-20 hover:scale-101 transition-transform duration-300">
-                <MdOutlineArrowOutward size={50} className="text-zinc-700" />
-            </div>
+        {/*link CTA button */}
+        <div className="absolute z-15 
+                    flex justify-center items-center 
+                    -bottom-1 -right-1 
+                    rounded-tl-[50%]
+                    aspect-square w-1/5
+                    bg-zinc-50">
+            {/*Circle with arrow icon */}
+            <a href={link} 
+            target="_blank"
+            className="flex justify-center items-center 
+                            w-3/5 aspect-square rounded-full 
+                            hover:scale-110 transition-transform duration-300 cursor-pointer
+                            bg-zinc-900">
+
+                {/* make arrow responsive size  */}
+                <MdOutlineArrowOutward size={36} className=" text-white" />
+            </a>
       </div>
     </div>
   );

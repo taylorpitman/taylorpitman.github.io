@@ -1,17 +1,19 @@
 // ./Projects.jsx
 
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-import Card from "./Carousel/card.jsx"; // adjust path as needed
+import Card from "./Carousel/card.jsx"; 
+import hydra from '../../assets/projects/hydraLab.png';
 
 const Projects = () => {
   const cards = [
     {
       id: 1,
-      title: "Project 1",
-      description: "Description for project 1",
-      link: "#",
+      img: hydra,
+      title: "Computer Science Hydra Lab Website",
+      description: "Developed the core components of a scalable website for the SUNY New Paltz Computer Science Department, laying the groundwork for future students to expand. The platform serves as a central hub for department resources, events, and student engagement.",
+      link: "https://hydra.newpaltz.edu/",
+      technologies: ["React", "TailwindCSS", "Express", "MariaDB"],
     },
-    // Add more cards as needed
   ];
 
   return (
@@ -30,9 +32,11 @@ const Projects = () => {
           {cards.map((card) => (
             <Card
               key={card.id}
+              img={card.img}
               title={card.title}
               description={card.description}
               link={card.link}
+              technologies={card.technologies}
             />
           ))}
         </div>

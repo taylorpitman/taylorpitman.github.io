@@ -1,11 +1,12 @@
 import Card from "./card.jsx";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 
 
 const Carousel = ({ cards }) => {
+
  const cardVariants = {
   enter: (direction) => ({
     x: direction > 0 ? 300 : -300,
@@ -26,8 +27,10 @@ const Carousel = ({ cards }) => {
     pointerEvents: "none",
   }),
 };
+
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const goToPrev = () => {
     setDirection(-1);
@@ -39,8 +42,24 @@ const Carousel = ({ cards }) => {
     setCurrent((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
   };
 
+    // Auto-scroll effect
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      goToNext();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [current, isHovered]); 
+
+
   return (
     <div>
+
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="hidden sm:flex flex-col items-center justify-center gap-1 relative"
+    >
       <div className="flex items-center justify-between w-full relative">
         {/* Left Arrow */}
         <MdKeyboardArrowLeft
@@ -80,7 +99,9 @@ const Carousel = ({ cards }) => {
           onClick={goToNext}
         />
       </div>
-      <div className="flex justify-center mt-2 gap-2">
+
+    {/* Pagination Dots */}
+      <div className="flex justify-center m-2 gap-2">
         {cards.map((_, idx) => (
           <span
             key={idx}
@@ -88,6 +109,22 @@ const Carousel = ({ cards }) => {
           />
         ))}
       </div>
+
+    </div>
+    
+    {/* Mobile view */}
+    <div className="sm:hidden flex flex-col gap-4">
+        {cards.map((card) => (
+            <Card
+            key={card.id}
+            img={card.img}
+            title={card.title}
+            description={card.description}
+            link={card.link}
+            technologies={card.technologies}
+            />
+        ))}
+        </div>
     </div>
   );
 };

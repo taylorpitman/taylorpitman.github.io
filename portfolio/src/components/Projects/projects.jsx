@@ -1,9 +1,8 @@
-// ./Projects.jsx
 
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import Carousel from "./Carousel/carousel.jsx";
 import hydra from '../../assets/projects/hydraLab.png';
 import womensNetwork from '../../assets/projects/womensNetwork.png';
+import rockPaperScissors from '../../assets/projects/rockPaperScissors.png';
 const Projects = () => {
   const cards = [
     {
@@ -18,23 +17,23 @@ const Projects = () => {
       id: 2,
       img: womensNetwork,
       title: "NYS Ace Women's Network Website",
-      description: "Developed a fully custom WordPress theme from scratch based on a Figma design",
+      description: "Built a fully custom WordPress theme from scratch in under two months. Collaborated with a graphic design student to bring UI/UX concepts to life, improving usability while rapidly learning WordPress development best practices.",
       link: "https://nyacewomen.org/",
       technologies: ["WordPress", "HTML", "CSS"],
     },
     {
       id: 3,
-      img: womensNetwork,
-      title: "NYS Ace Women's Network Website",
-      description: "Developed a fully custom WordPress theme from scratch based on a Figma design",
-      link: "https://nyacewomen.org/",
-      technologies: ["WordPress", "HTML", "CSS"],
+      img: rockPaperScissors,
+      title: "Rock Paper Scissors Game",
+      description: "Developed a fully functional Rock Paper Scissors game using JavaScript, HTML, and CSS. This project was to reenforce my vanilla JavaScript skills.",
+      link: "https://taylorpitman.com/rock-paper-scissors-js/",
+      technologies: ["JavaScript", "HTML", "CSS"],
     },
   ];
 
   return (
     <div className="flex-col max-w-2xl mt-20 mx-auto justify-center flex px-8 md:px-6 gap-4 text-zinc-900">
-      <h1 className="text-2xl font-semibold mb-4">Recent Projects</h1>
+      <h1 className="text-2xl font-semibold ">Recent Projects</h1>
         <Carousel cards={cards} />
     </div>
   );

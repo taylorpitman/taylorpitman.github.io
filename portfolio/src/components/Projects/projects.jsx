@@ -3,7 +3,7 @@
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import Carousel from "./Carousel/carousel.jsx";
 import hydra from '../../assets/projects/hydraLab.png';
-
+import womensNetwork from '../../assets/projects/womensNetwork.png';
 const Projects = () => {
   const cards = [
     {
@@ -13,6 +13,22 @@ const Projects = () => {
       description: "Developed the core components of a scalable website for the SUNY New Paltz Computer Science Department, laying the groundwork for future students to expand. The platform serves as a central hub for department resources, events, and student engagement.",
       link: "https://hydra.newpaltz.edu/",
       technologies: ["React", "TailwindCSS", "Express", "MariaDB"],
+    },
+    {
+      id: 2,
+      img: womensNetwork,
+      title: "NYS Ace Women's Network Website",
+      description: "Developed a fully custom WordPress theme from scratch based on a Figma design",
+      link: "https://nyacewomen.org/",
+      technologies: ["WordPress", "HTML", "CSS"],
+    },
+    {
+      id: 3,
+      img: womensNetwork,
+      title: "NYS Ace Women's Network Website",
+      description: "Developed a fully custom WordPress theme from scratch based on a Figma design",
+      link: "https://nyacewomen.org/",
+      technologies: ["WordPress", "HTML", "CSS"],
     },
   ];
 

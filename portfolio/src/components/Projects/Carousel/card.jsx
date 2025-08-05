@@ -38,11 +38,12 @@ const Card = ({ img, title, description, link, technologies }) => {
                     group overflow-hidden
                     bg-[url(img)] bg-cover bg-center
                     hover:shadow-xl transition-shadow duration-300
+                    border-1 hover:border-transparent border-zinc-200
                     ">
 
     <img
         src={img}
-        alt=""
+        alt={`Screenshot of ${title}`}
         className="absolute inset-0 object-cover w-full h-full"
     />
       {/* Dark overlay */}
@@ -75,10 +76,9 @@ const Card = ({ img, title, description, link, technologies }) => {
             </motion.span>
           ))}
         </motion.div>
-      </motion.div>
 
-        {/*link CTA button */}
-        <div className="absolute z-15 
+                {/*link CTA button */}
+        <motion.div className="absolute z-15 
                     flex justify-center items-center 
                     -bottom-1 -right-1 
                     rounded-tl-[50%]
@@ -88,6 +88,8 @@ const Card = ({ img, title, description, link, technologies }) => {
             {/*Circle with arrow icon */}
             <a href={link} 
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open project: ${title}`}
             className="flex justify-center items-center 
                             w-3/5 aspect-square rounded-full 
                             hover:scale-110 transition-transform duration-300 cursor-pointer
@@ -97,7 +99,10 @@ const Card = ({ img, title, description, link, technologies }) => {
                 {/* make arrow responsive size  */}
                 <MdOutlineArrowOutward size={36} className=" text-white" />
             </a>
-      </div>
+      </motion.div>
+      </motion.div>
+
+
     </motion.div>
   );
 };

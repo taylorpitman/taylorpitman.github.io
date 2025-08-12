@@ -1,7 +1,7 @@
     
     export const colors = [
-        "rose-300",
-        "green-300",
-        "orange-300",
-        "emerald-300",
+        "bg-rose-300",
+        "bg-green-300",
+        "bg-orange-300",
+        "bg-emerald-300",
     ]

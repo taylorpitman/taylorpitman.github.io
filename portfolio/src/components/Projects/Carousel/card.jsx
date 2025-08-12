@@ -63,7 +63,7 @@ const Card = ({ img, title, description, link, technologies }) => {
 
         <motion.div className="flex flex-wrap gap-1 w-3/4 items-center justify-center sm:gap-2">
           {technologies.map((technology, index) => (
-            <motion.span key={technology} className={`text-xs bg-${colors[index % colors.length]} text-xs sm:text-sm px-2 py-1 rounded-md text-zinc-900 hover:scale-110 transition-transform duration-300 cursor-pointer`}
+            <motion.span key={technology} className={`text-xs ${colors[index % colors.length]} text-xs sm:text-sm px-2 py-1 rounded-md text-zinc-900 hover:scale-110 transition-transform duration-300 cursor-pointer`}
               variants={tagVariants}>
               {technology}
             </motion.span>

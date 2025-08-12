@@ -10,7 +10,6 @@ const Timeline= () => {
                 title="Software Engineer"
                 date="Jan 2020 - Present"
                 description="Working on various projects using React and Node.js"
-                isFirst={true}
             />
             <TimelineItem
                 position="right"
@@ -24,7 +23,6 @@ const Timeline= () => {
                 title="Software Engineer"
                 date="Jan 2020 - Present"
                 description="Working on various projects using React and Node.js"
-                isFirst={false}
             />
             <TimelineItem
                 position="right"

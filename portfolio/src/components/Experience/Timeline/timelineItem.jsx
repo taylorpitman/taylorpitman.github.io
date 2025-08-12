@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 
-const TimelineItem = ({ position, title, date, description, isLast }) => {
-  const isLeft = position === "left";
+{/* Motion Variants */}
 
   const container = {
     hidden: {},
@@ -23,6 +22,9 @@ const TimelineItem = ({ position, title, date, description, isLast }) => {
     show: { opacity: 1, x: 0, transition: { duration: 0.3 } },
   };
 
+const TimelineItem = ({ position, title, date, company, description, isLast }) => {
+  const isLeft = position === "left";
+
   return (
     <motion.div
       className="grid grid-cols-[1fr_32px_1fr] min-h-24 relative group"
@@ -37,20 +39,10 @@ const TimelineItem = ({ position, title, date, description, isLast }) => {
         variants={leftTextVariants}
       >
         {isLeft && (
-          <div className="flex flex-col gap-2 w-full ml-2 relative">
+          <div className="flex flex-col gap-1 w-full ml-2 relative">
             <h3 className="text-lg font-semibold">{title}</h3>
+            <span className="text-sm text-zinc-700">{company}</span>
             <span className="text-sm text-zinc-500">{date}</span>
-
-            {/* Hover Description */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileHover={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-full left-0 mt-2 bg-white border border-zinc-200 rounded-lg shadow-lg p-3 text-sm text-zinc-700 w-64 z-10 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"
-            >
-              {description}
-            </motion.div>
-            
           </div>
         )}
       </motion.div>
@@ -76,12 +68,12 @@ const TimelineItem = ({ position, title, date, description, isLast }) => {
       >
         {!isLeft && (
         <div className="cursor-pointer">
-            <div className="flex flex-col gap-2 w-full ml-2 relative">
+            <div className="flex flex-col gap-1 w-full ml-2 relative">
                 <h3 className="text-lg font-semibold">{title}</h3>
+                <span className="text-sm text-zinc-700">{company}</span>
                 <span className="text-sm text-zinc-500">{date}</span>
 
             </div>
-
 
           </div>
         )}

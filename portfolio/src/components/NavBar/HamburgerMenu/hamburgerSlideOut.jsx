@@ -45,13 +45,6 @@ const HamburgerSlideOut = ({isOpen}) => {
                         </a>
                     </motion.li>
                     
-                    <motion.li
-                        className="hover:translate-x-1 transition-transform duration-300 ease-in-out">
-                        <a href ="/" className= "flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors ease-in-out duration-300">
-                            <PiLightbulb size={24} />
-                            <span className="text-lg font-medium">Skills</span>
-                        </a>
-                    </motion.li>
 
                     <motion.li
                         className="hover:translate-x-1 transition-transform duration-300 ease-in-out">

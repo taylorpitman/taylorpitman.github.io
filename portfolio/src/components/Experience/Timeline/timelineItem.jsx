@@ -50,6 +50,7 @@ const TimelineItem = ({ position, title, date, description, isLast }) => {
             >
               {description}
             </motion.div>
+            
           </div>
         )}
       </motion.div>
@@ -80,15 +81,7 @@ const TimelineItem = ({ position, title, date, description, isLast }) => {
                 <span className="text-sm text-zinc-500">{date}</span>
 
             </div>
-            {/* Hover Description */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileHover={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className=" bg-white border border-zinc-200 rounded-lg shadow-lg p-3 text-sm text-zinc-700 z-10 "
-            >
-              {description}
-            </motion.div>
+
 
           </div>
         )}

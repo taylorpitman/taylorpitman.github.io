@@ -67,7 +67,7 @@ const TimelineItem = ({ position, title, date, company, description, isLast }) =
         variants={rightTextVariants}
       >
         {!isLeft && (
-        <div className="cursor-pointer">
+        <div className="">
             <div className="flex flex-col gap-1 w-full ml-2 relative">
                 <h3 className="text-lg font-semibold">{title}</h3>
                 <span className="text-sm text-zinc-700">{company}</span>

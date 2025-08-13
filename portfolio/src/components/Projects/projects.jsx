@@ -25,9 +25,9 @@ const Projects = () => {
       id: 3,
       img: rockPaperScissors,
       title: "Rock Paper Scissors Game",
-      description: "Developed a fully functional Rock Paper Scissors game using JavaScript, HTML, and CSS. This project was to reenforce my vanilla JavaScript skills.",
+      description: "Developed a fully functional Rock Paper Scissors game using JavaScript, HTML, and TailwindCSS. This project was to reenforce my vanilla JavaScript skills.",
       link: "https://taylorpitman.com/rock-paper-scissors-js/",
-      technologies: ["JavaScript", "HTML", "CSS"],
+      technologies: ["JavaScript", "HTML", "TailwindCSS"],
     },
   ];
 

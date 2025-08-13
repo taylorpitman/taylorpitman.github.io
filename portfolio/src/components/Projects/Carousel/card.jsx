@@ -1,14 +1,8 @@
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { motion } from "motion/react";
+import { colors } from "../../../constants/colors.js";
 
 const Card = ({ img, title, description, link, technologies }) => {
-
-    const colors = [
-        "bg-rose-300",
-        "bg-green-300",
-        "bg-orange-300",
-        "bg-emerald-300",
-    ]
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -31,15 +25,14 @@ const Card = ({ img, title, description, link, technologies }) => {
     };
 
   return (
-    <motion.div className="relative  
+    <motion.div className={`relative  
                     aspect-[3/2] w-full rounded-2xl  
                     m-2 p-4 
                     flex flex-col items-center justify-center 
                     group overflow-hidden
-                    bg-[url(img)] bg-cover bg-center
                     hover:shadow-xl transition-shadow duration-300
                     border-1 hover:border-transparent border-zinc-200
-                    ">
+                    `}>
 
     <img
         src={img}

@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/navbar.jsx'
 import About from './components/about.jsx'
 import Projects from './components/Projects/projects.jsx'
 import Experience from './components/Experience/experience.jsx'
+import ContactCard from './components/Contact/contactCard.jsx'
 function App() {
 
   return (
@@ -13,6 +14,7 @@ function App() {
       <About />
       <Projects />
       <Experience />
+      <ContactCard />
     </div>
   )
 }

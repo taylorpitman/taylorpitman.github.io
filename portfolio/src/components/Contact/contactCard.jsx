@@ -32,7 +32,7 @@ const ContactCard = () => {
         >
                 <motion.h1 className='text-2xl font-bold' variants={childVariants}>Hire Me</motion.h1>
                 <motion.p className='text-md text-zinc-600' variants={childVariants}>Need an end-to-end builder who’s flexible, fast, and passionate 
-                    about craft? I turn ideas into responsive, production-ready experiences and love collaborating to 
+                    about craft? I turn ideas into responsive, production ready experiences and love collaborating to 
                     iterate. Reach out!</motion.p>
 
                 {/* CTA Button + Availability status  */}

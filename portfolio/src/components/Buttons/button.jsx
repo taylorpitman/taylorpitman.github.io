@@ -1,6 +1,6 @@
 
 
-const Button = ({ text, onClick, width }) => {
+const Button = ({ text, onClick }) => {
 
     return (
 

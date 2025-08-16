@@ -3,7 +3,28 @@ import Carousel from "./Carousel/carousel.jsx";
 import hydra from '../../assets/projects/hydraLab.png';
 import womensNetwork from '../../assets/projects/womensNetwork.png';
 import rockPaperScissors from '../../assets/projects/rockPaperScissors.png';
+import {motion} from 'motion/react'
+
+const containerVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+      duration: 0.4,
+      ease: 'easeOut',
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+};
 const Projects = () => {
+
   const cards = [
     {
       id: 1,
@@ -32,12 +53,19 @@ const Projects = () => {
   ];
 
   return (
-    <section 
+    <motion.section 
     aria-labelledby = 'recent-projects-heading'
-    className="flex-col max-w-2xl mt-20 mx-auto justify-center flex px-8 md:px-6 gap-4 text-zinc-900">
-      <h1 className="text-2xl font-semibold ">Recent Projects</h1>
+    className="flex-col max-w-2xl mt-20 mx-auto justify-center flex px-8 md:px-6 gap-4 text-zinc-900"
+    variants={containerVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.5 }}
+    >
+      <motion.h1 className="text-2xl font-bold" variants={childVariants}>Recent Projects</motion.h1>
+      <motion.div variants={childVariants}>
         <Carousel cards={cards} />
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

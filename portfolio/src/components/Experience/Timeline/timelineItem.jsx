@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
   const container = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.08 } },
+    show: { transition: { staggerChildren: 0.2, delay: 0.2 } },
   };
 
   const lineVariants = {

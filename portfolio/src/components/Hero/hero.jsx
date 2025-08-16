@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="flex items-center justify-center mt-8 sm:mt-15 md:mt-30  ">
             <div className="flex flex-col items-center sm:items-baseline sm:mt-5 gap-2 text-zinc-900 relative z-0  ">
                     <h1 className ="text-zinc-900 text-4xl sm:text-3xl font-bold ">Hello, I'm Taylor. <br/> Front-end Developer.</h1>
-                    <span className="text-left px-auto text-lg sm:text-sm "> 
+                    <span className="text-left px-auto text-zinc-600 text-lg sm:text-sm "> 
                         I thrive in the code space and I'm currently
                         diving into UI/UX and graphic design to 
                         bridge the gap between design and development.

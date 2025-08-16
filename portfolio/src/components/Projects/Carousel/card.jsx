@@ -30,7 +30,6 @@ const Card = ({ img, title, description, link, technologies }) => {
                     m-2 p-4 
                     flex flex-col items-center justify-center 
                     group overflow-hidden
-                    hover:shadow-xl transition-shadow duration-300
                     border-1 hover:border-transparent border-zinc-200
                     `}>
 

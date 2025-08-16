@@ -12,12 +12,13 @@ const Hero = () => {
             <div className = "flex flex-col gap-4 justify-center items-center w-36 sm:min-h-full sm:justify-start">
                 <img src={lamp} alt="Lamp" className='cursor-pointer hover:scale-105 transition-transform duration-200' />
                 <img src={headshot} alt="Headshot" className="w-sm sm:w-md rounded-full shadow-lg" />
-                <button className="inline-flex justify-center items-center gap-2.5 font-medium transition-colors duration-300 ease-in-out
+                <a href="portfolio/src/assets/Pitman_Resume_June_2025.pdf" download="TaylorPitman_Resume.pdf"
+                className="inline-flex justify-center items-center gap-2.5 font-medium transition-colors duration-300 ease-in-out
                 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-zinc-900 text-white  border-2 border-transparent
                  hover:text-zinc-900 hover:border-zinc-900 hover:bg-zinc-50
                 focus:ring-zinc-500 p-2 text-xs  rounded-xl w-full cursor-pointer">
                     Download CV 
-                </button>
+                </a>
             </div>
         </div>
 

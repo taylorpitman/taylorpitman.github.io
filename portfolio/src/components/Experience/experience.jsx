@@ -1,20 +1,48 @@
 import Timeline from "./Timeline/timeline";
 import Button from "../Buttons/button.jsx";
+import {motion} from 'motion/react'
 
+const containerVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+      duration: 0.4,
+      ease: 'easeOut',
+    },
+  },
+};
 
+const childVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+};
 
 const Experience = () => {
     return (
-        <div className="flex-col max-w-2xl mt-20 mb-20 w-full mx-auto justify-center flex px-8 md:px-6 gap-6 text-zinc-900">
-            <div className="flex justify-between">
-                <h1 className="text-2xl font-semibold">Work Experience</h1>
-                <Button 
-                    text="Download CV" 
-                  
-                />
-            </div>
+        <motion.section 
+        aria-labelledby="experience-heading"
+        className="flex-col max-w-2xl mt-20 mb-20 w-full mx-auto justify-center flex px-8 md:px-6 gap-6 text-zinc-900"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        >
+            <motion.div className="flex justify-between"
+            variants={childVariants}
+            >
+                <h1 className="text-2xl font-bold">Work Experience</h1>
+                <a href="/resume/TaylorPitmanResume.pdf" download="TaylorPitman_Resume.pdf">
+                    <Button
+                        text="Download CV"
+                    />
+                </a>
+            </motion.div>
             <Timeline />
-        </div>
+        </motion.section>
     )
 
 }

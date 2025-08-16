@@ -9,7 +9,7 @@ const NavBar = () => {
     return (
         <>
         <nav className="hidden sm:flex items-center justify-center fixed top-10 z-50  px-4 py-3 w-full">
-            <div className = "flex items-center  px-4 py-2 rounded-2xl border border-zinc-200 bg-white/80 backdrop-blur-lg   text-zinc-700 w-fit">
+            <div className = "flex items-center  px-4 py-2 rounded-2xl border border-zinc-200 bg-white/80 backdrop-blur-lg   text-zinc-600 w-fit">
 
                 {/*Home Link*/}
                 <a href="/" className="flex justify-center items-center hover:text-zinc-500  transition-color ease-in-out duration-200 items" aria-label="Home"><BiHomeAlt size={24} /></a>

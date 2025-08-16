@@ -5,8 +5,9 @@ import About from './components/about.jsx'
 import Projects from './components/Projects/projects.jsx'
 import Experience from './components/Experience/experience.jsx'
 import ContactCard from './components/Contact/contactCard.jsx'
-function App() {
+import {motion} from "motion/react"
 
+function App() {
   return (
     <div className=" bg-zinc-50/10">
       <NavBar />

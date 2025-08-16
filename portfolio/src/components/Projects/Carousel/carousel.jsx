@@ -42,7 +42,7 @@ const Carousel = ({ cards }) => {
     setCurrent((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
   };
 
-    // Auto-scroll effect
+
   useEffect(() => {
     if (isHovered) return;
     const interval = setInterval(() => {

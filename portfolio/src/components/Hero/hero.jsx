@@ -5,7 +5,9 @@ import headshot from '../../assets/headshots/headshot.jpg';
 
 const Hero = () => {
   return (
-    <div className="relative flex-col sm:flex-row max-w-2xl sm:mt-27 mt-0 mx-auto justify-center flex px-8 sm:px-6 md:px-6 ">
+    <section 
+    aria-labelledby='hero-heading'
+    className="relative flex-col sm:flex-row max-w-2xl sm:mt-27 mt-0 mx-auto justify-center flex px-8 sm:px-6 md:px-6 ">
 
         {/*Headshot */}
         <div className = "flex justify-center  w-full">
@@ -36,7 +38,7 @@ const Hero = () => {
        <img src={plant} alt="Plant" className=" hidden scale-x-[-1] sm:block relative translate-y-11 -translate-x-5 self-end h-90  z-4 " />
 
 
-    </div>
+    </section>
   );
 }
 export default Hero;

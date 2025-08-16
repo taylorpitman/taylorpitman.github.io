@@ -69,7 +69,7 @@ const Card = ({ img, title, description, link, technologies }) => {
           ))}
         </motion.div>
 
-                {/*link CTA button */}
+            {/*link CTA button */}
         <motion.div className="absolute z-15 
                     flex justify-center items-center 
                     -bottom-1 -right-1 

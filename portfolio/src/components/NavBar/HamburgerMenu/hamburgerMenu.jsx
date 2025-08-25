@@ -2,9 +2,17 @@ import {useState} from 'react';
 import { BiHomeAlt } from "react-icons/bi";
 import HamburgerButton from './hamburgerButton.jsx';
 import HamburgerSlideOut from "./hamburgerSlideOut.jsx";
+import { useEffect } from 'react';
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (!isOpen) return;
+        const handleScroll = () => setIsOpen(false);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isOpen]);
 
     return (
         <>

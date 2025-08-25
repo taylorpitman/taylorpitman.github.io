@@ -1,3 +1,4 @@
+# Taylor Pitman Portfolio
 
 Welcome to my personal portfolio website!  
 Built with **React**, **Vite**, **Framer Motion**, and **TailwindCSS**, this site showcases my projects, experience, and contact information in a modern, responsive design.
@@ -75,12 +76,19 @@ portfolio/
 
 ---
 
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
 ## 🙋‍♂️ Contact
 
-Feel free to reach out via the "Email me" button on the site or connect with me on [LinkedIn]https://www.linkedin.com/in/taylor-pitman-6107b91b8/).
+Feel free to reach out via the contact form on the site or connect with me on [LinkedIn](https://www.linkedin.com/in/taylorpitman/).
 
 ---
 
 **Thanks for visiting my portfolio!**
->>>>>>> Stashed changes
+
+
 

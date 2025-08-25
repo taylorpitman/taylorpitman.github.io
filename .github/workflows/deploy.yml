@@ -27,10 +27,12 @@ jobs:
         with: { node-version: 20 }
       - run: npm ci
       - run: npm run build
-      # Vite outputs to dist; CRA outputs to build — pick one:
+      - run: cp dist/index.html dist/404.html  # SPA fix (Vite)
+
+      # 👇 IMPORTANT: path is relative to repo root, so include 'portfolio/'
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # or ./build for CRA
+          path: portfolio/dist   # not just 'dist'
   deploy:
     needs: build
     runs-on: ubuntu-latest

@@ -23,6 +23,7 @@ const ContactCard = () => {
 
     return (
         <motion.section 
+        id = "contact"
         aria-labelledby="hire-me-heading"
         className='flex-col max-w-2xl mt-20 mb-20 w-full mx-auto justify-center flex px-8 md:px-6 gap-2 text-zinc-900'
         variants={containerVariants}

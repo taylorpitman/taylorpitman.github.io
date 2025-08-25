@@ -1,5 +1,5 @@
 import {motion, MotionConfig} from "motion/react"
-import { PiPaintBrush, PiLightbulb, PiBriefcase, PiUser } from "react-icons/pi";
+import { PiPaintBrush, PiChatCircleDotsLight, PiBriefcase, PiUser } from "react-icons/pi";
 
 const HamburgerSlideOut = ({isOpen}) => {
     return (
@@ -30,7 +30,7 @@ const HamburgerSlideOut = ({isOpen}) => {
                     <motion.li
                     className="hover:translate-x-1 transition-transform duration-300 ease-in-out"
                     >
-                        <a href ="/" className= "flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors ease-in-out duration-300">
+                        <a href ="#about" className= "flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors ease-in-out duration-300">
                             <PiUser size={24} />
                             <span className="text-lg font-medium">About</span>
                         </a>
@@ -39,7 +39,7 @@ const HamburgerSlideOut = ({isOpen}) => {
                     <motion.li
                         className="hover:translate-x-1 transition-transform duration-300 ease-in-out"
                     >
-                        <a href ="/" className= "flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors ease-in-out duration-300">
+                        <a href ="#projects" className= "flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors ease-in-out duration-300">
                             <PiPaintBrush size={24} />
                             <span className="text-lg font-medium">Projects</span>
                         </a>
@@ -48,9 +48,17 @@ const HamburgerSlideOut = ({isOpen}) => {
 
                     <motion.li
                         className="hover:translate-x-1 transition-transform duration-300 ease-in-out">
-                        <a href ="/" className= "flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors ease-in-out duration-300">
+                        <a href ="#experience" className= "flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors ease-in-out duration-300">
                             <PiBriefcase size={24} />
                             <span className="text-lg font-medium">Experience</span>
+                        </a>
+                    </motion.li>
+
+                    <motion.li
+                        className="hover:translate-x-1 transition-transform duration-300 ease-in-out">
+                        <a href ="#contact" className= "flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors ease-in-out duration-300">
+                            <PiChatCircleDotsLight size={24} />
+                            <span className="text-lg font-medium">Contact</span>
                         </a>
                     </motion.li>
 

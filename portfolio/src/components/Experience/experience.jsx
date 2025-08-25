@@ -23,7 +23,8 @@ const childVariants = {
 
 const Experience = () => {
     return (
-        <motion.section 
+        <motion.section
+        id = "experience" 
         aria-labelledby="experience-heading"
         className="flex-col max-w-2xl mt-20 mb-20 w-full mx-auto justify-center flex px-8 md:px-6 gap-2 sm:gap-6 text-zinc-900"
         variants={containerVariants}

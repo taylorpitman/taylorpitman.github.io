@@ -2,7 +2,7 @@ import plant from '../../assets/hero/plant.png';
 import lamp from '../../assets/hero/lamp.png';
 import headshot from '../../assets/headshots/headshot.jpg';
 import { motion } from "motion/react";
-
+import { useState } from 'react';
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -18,6 +18,8 @@ const containerVariants = {
 
 
 const Hero = () => {
+  const [showTooltip, setShowTooltip] = useState(false);
+  
   return (
     <motion.section
       aria-labelledby='hero-heading'
@@ -31,7 +33,27 @@ const Hero = () => {
       {/*Headshot */}
       <motion.div className="flex justify-center  w-full" >
         <div className="flex flex-col gap-4 justify-center items-center w-36 sm:min-h-full sm:justify-start">
-          <motion.img src={lamp} alt="Lamp" className='cursor-pointer hover:scale-105 transition-transform duration-200'  />
+          <div
+            className="relative flex justify-center items-center"
+            onMouseEnter={() => setShowTooltip(true)}
+            onMouseLeave={() => setShowTooltip(false)}
+          >
+            <motion.img
+              src={lamp}
+              alt="Lamp"
+              className="cursor-pointer hover:scale-105 transition-transform duration-200"
+            />
+            {showTooltip && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="absolute text-center top-full mt-2 px-2 py-1 rounded-xl bg-zinc-900 text-white text-xs shadow-xl z-10"
+              >
+                Dark mode coming soon!
+              </motion.div>
+            )}
+          </div>
           <motion.img src={headshot} alt="Headshot" className="w-sm sm:w-md rounded-full shadow-lg"    />
           <motion.a
             href="portfolio/src/assets/Pitman_Resume_June_2025.pdf"

@@ -49,6 +49,7 @@ const Card = ({ img, title, description, link, technologies }) => {
                       
                     variants={containerVariants}
                     initial="hidden"
+                    animate="hidden"
                     whileHover="show">
 
         <motion.h2 className="text-md sm:text-2xl font-semibold"

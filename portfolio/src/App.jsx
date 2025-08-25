@@ -5,7 +5,6 @@ import About from './components/about.jsx'
 import Projects from './components/Projects/projects.jsx'
 import Experience from './components/Experience/experience.jsx'
 import ContactCard from './components/Contact/contactCard.jsx'
-import {motion} from "motion/react"
 import Footer from './components/Footer/footer.jsx'
 
 function App() {

@@ -79,9 +79,9 @@ const Timeline= () => {
 
                     <motion.div key={item.id} className="flex flex-col"
                         variants={childVariants}
-                              initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}>
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}>
                         <div className="flex items-center mb-1">
                             <h3 className="text-lg text-zinc-800 font-semibold">{item.title}</h3>
                         </div>
@@ -94,11 +94,12 @@ const Timeline= () => {
                 {/*Download CV Button */}
                 <motion.div className="flex justify-center"
                 variants={childVariants}
-                      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
                 >
-                    <motion.a href="/resume/TaylorPitmanResume.pdf" download="TaylorPitman_Resume.pdf"
+                    <motion.a href="/PitmanResume.pdf" download="TaylorPitman_Resume.pdf"
+                        aria-label = "Download my Resume as a PDF"
                         className="w-full">
                         <button 
                         className='inline-flex w-full justify-center items-center gap-2.5 font-medium transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2  border-zinc-900 border-2 text-zinc-900 hover:text-white hover:bg-zinc-900 focus:ring-zinc-500 px-6 py-2 text-sm rounded-xl  cursor-pointer' 

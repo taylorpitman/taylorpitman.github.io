@@ -23,7 +23,8 @@ const childVariants = {
 
 const Experience = () => {
     return (
-        <motion.section 
+        <motion.section
+        id = "experience" 
         aria-labelledby="experience-heading"
         className="flex-col max-w-2xl mt-20 mb-20 w-full mx-auto justify-center flex px-8 md:px-6 gap-2 sm:gap-6 text-zinc-900"
         variants={containerVariants}
@@ -35,8 +36,9 @@ const Experience = () => {
             variants={childVariants}
             >
                 <h1 className="text-2xl font-bold">Work Experience</h1>
-                <a href="/resume/TaylorPitmanResume.pdf" download="TaylorPitman_Resume.pdf"
-                    className="hidden sm:flex ">
+                <a href="/PitmanResume.pdf" download="TaylorPitman_Resume.pdf"
+                    className="hidden sm:flex "
+                    aria-label = "Download my Resume as a PDF">
                     <Button
                         text="Download CV"
                     />

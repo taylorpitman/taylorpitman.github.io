@@ -27,14 +27,14 @@ const NavBar = () => {
                         <span className=" absolute  left-0 bottom-1 w-full h-0.5 bg-zinc-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                     </a>
                     <a
-                        href="/projects"
+                        href="#projects"
                         className="group md:px-4 px-2 py-2 hover:text-zinc-900 relative transition-colors duration-300"
                     >
                         Projects
                         <span className="absolute left-0 bottom-1 w-full h-0.5 bg-zinc-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                     </a>
                     <a
-                        href="/experience"
+                        href="#experience"
                         className="group md:px-4 px-2 py-2 hover:text-zinc-900 relative transition-colors duration-300"
                     >
                         Experience

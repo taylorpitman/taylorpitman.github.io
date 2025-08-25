@@ -2,7 +2,7 @@
 import Carousel from "./Carousel/carousel.jsx";
 import hydra from '../../assets/projects/hydraLab.png';
 import womensNetwork from '../../assets/projects/womensNetwork.png';
-import rockPaperScissors from '../../assets/projects/rockPaperScissors.png';
+import rockPaperScissors from '../../assets/projects/RockPaperScissors.png';
 import {motion} from 'motion/react'
 
 const containerVariants = {

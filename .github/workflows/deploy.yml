@@ -15,7 +15,7 @@ concurrency:
 
 defaults:
   run:
-    working-directory: portfolio   # <— build inside the subfolder
+    working-directory: portfolio   
 
 
 jobs:

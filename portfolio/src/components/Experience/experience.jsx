@@ -25,23 +25,28 @@ const Experience = () => {
     return (
         <motion.section 
         aria-labelledby="experience-heading"
-        className="flex-col max-w-2xl mt-20 mb-20 w-full mx-auto justify-center flex px-8 md:px-6 gap-6 text-zinc-900"
+        className="flex-col max-w-2xl mt-20 mb-20 w-full mx-auto justify-center flex px-8 md:px-6 gap-2 sm:gap-6 text-zinc-900"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         >
-            <motion.div className="flex justify-between"
+            <motion.div className="flex flex-col sm:flex-row gap-2 sm:justify-between"
             variants={childVariants}
             >
                 <h1 className="text-2xl font-bold">Work Experience</h1>
-                <a href="/resume/TaylorPitmanResume.pdf" download="TaylorPitman_Resume.pdf">
+                <a href="/resume/TaylorPitmanResume.pdf" download="TaylorPitman_Resume.pdf"
+                    className="hidden sm:flex ">
                     <Button
                         text="Download CV"
                     />
                 </a>
             </motion.div>
-            <Timeline />
+            <motion.div
+                variants={childVariants}
+            >
+                <Timeline />
+            </motion.div>
         </motion.section>
     )
 

@@ -2,10 +2,8 @@ import Card from "./card.jsx";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import arrow from "../../../assets/accordianArrow.svg";
 
-
-
-const Carousel = ({ cards }) => {
 
  const cardVariants = {
   enter: (direction) => ({
@@ -28,9 +26,56 @@ const Carousel = ({ cards }) => {
   }),
 };
 
+const detailsVariants = {
+  hidden:  { opacity: 0, height: 0, y: -12 },
+  visible: {
+    opacity: 1, height: "auto", y: 0,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+  exit: {
+    opacity: 0, height: 0, y: -12,
+    transition: { duration: 0.2, ease: "easeInOut" },
+  },
+};
+
+
+const detailsItem = {
+  hidden:  { opacity: 0, y: 5 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeInOut" } },
+};
+
+const arrowVariants = {
+    open:   {   rotate: [-90, 10, 0],  
+                scale:  [1, 1.06, 1],
+                transition: { duration: 0.3, ease: "easeInOut" } },
+    closed: {   rotate: -90, 
+            },
+    exit: {     rotate: [0, -100, -90], 
+                scale:  [1, 1.06, 1],
+                transition: { duration: 0.3, ease: "easeInOut" } },
+
+};
+
+const Carousel = ({ cards }) => {
+
+
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [openIds, setOpenIds] = useState(() => new Set());
+    const isOpen = (id) => openIds.has(id);
+    const toggle = (id) =>
+    setOpenIds(prev => {
+        const next = new Set(prev);
+        next.has(id) ? next.delete(id) : next.add(id);
+        return next;
+    });
 
   const goToPrev = () => {
     setDirection(-1);
@@ -124,24 +169,56 @@ return (
                     <div className="w-full px-4 py-2 text-center">
                         <span className="text-zinc-900 font-semibold text-lg">{card.title}</span>
                     </div>
-                    <div className="w-full px-4 pb-2">
-                        <details className="text-left">
-                            <summary className="cursor-pointer text-zinc-700 font-medium py-1 hover:underline">
-                                Details
-                            </summary>
-                            <div className="mt-2">
-                                <div className="mb-2 text-zinc-600 text-sm">
-                                    {card.description}
-                                </div>
-                                <div className="text-zinc-500 text-xs">
-                                    <span className="font-semibold">Technologies:</span>{" "}
-                                    {card.technologies && Array.isArray(card.technologies)
-                                        ? card.technologies.join(", ")
-                                        : card.technologies}
-                                </div>
-                            </div>
-                        </details>
-                    </div>
+
+                    {/* Details Drop down*/}
+                    <motion.div className="w-full px-4 pb-2">
+                        <div className="text-left">
+
+                            <motion.button className="flex gap-2 cursor-pointer select-none items-center"
+                                onClick={() => toggle(card.id)}
+                                type = "button"
+                                aria-expanded={isOpen(card.id)}
+                                aria-controls={`details-${card.id}`}
+                            >
+                                <motion.span className="text-zinc-700 font-medium py-1">
+                                    Details
+                                </motion.span>
+                                <motion.img src={arrow} alt="Toggle Details" className="w-4 block origin-center" 
+                                    aria-hidden="true"
+                                    variants={arrowVariants}
+                                    initial="closed"
+                                    animate={isOpen(card.id) ? "open" : "exit"}
+                                />
+                            </motion.button>
+
+                            {/* Details Panel */}
+
+                            <AnimatePresence initial = {false}> 
+                                {isOpen(card.id) && (
+                                    <motion.div
+                                        key={`details-${card.id}`}              // per-card key for clean exit
+                                        id={`details-${card.id}`}
+                                        className="mt-2 overflow-hidden"     // important for height animation
+                                        variants={detailsVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        exit="exit"
+                                        role="region"
+                                    >
+                                        <motion.div className="mb-4 text-zinc-600 text-sm" variants={detailsItem}>
+                                            {card.description}
+                                        </motion.div>
+                                        <motion.div className="text-zinc-600 text-sm" variants={detailsItem}>
+                                            <span className="font-semibold">Technologies:</span>{" "}
+                                            {Array.isArray(card.technologies)
+                                            ? card.technologies.join(", ")
+                                            : card.technologies}
+                                        </motion.div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    </motion.div>
                 </div>
             ))}
         </div>

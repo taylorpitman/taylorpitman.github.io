@@ -58,7 +58,7 @@ const NavBar = () => {
                         <FiGithub size={22} />
                     </a>
 
-                    <a href="https://www.linkedin.com/in/taylor-pitman/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className=" hover:text-zinc-500  transition-color ease-in-out duration-200 items">
+                    <a href="https://www.linkedin.com/in/taylor-pitman-6107b91b8/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className=" hover:text-zinc-500  transition-color ease-in-out duration-200 items">
                         <TbBrandLinkedin size={24} />
                     </a>
                 </div>

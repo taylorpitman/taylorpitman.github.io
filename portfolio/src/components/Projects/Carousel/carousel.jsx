@@ -196,9 +196,9 @@ return (
                             <AnimatePresence initial = {false}> 
                                 {isOpen(card.id) && (
                                     <motion.div
-                                        key={`details-${card.id}`}              // per-card key for clean exit
+                                        key={`details-${card.id}`}            
                                         id={`details-${card.id}`}
-                                        className="mt-2 overflow-hidden"     // important for height animation
+                                        className="mt-2 overflow-hidden"     
                                         variants={detailsVariants}
                                         initial="hidden"
                                         animate="visible"

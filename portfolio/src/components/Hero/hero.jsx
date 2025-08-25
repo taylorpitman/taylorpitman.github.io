@@ -56,12 +56,12 @@ const Hero = () => {
           </div>
           <motion.img src={headshot} alt="Headshot" className="w-sm sm:w-md rounded-full shadow-lg"    />
           <motion.a
-            href="portfolio/src/assets/Pitman_Resume_June_2025.pdf"
+            href="/PitmanResume.pdf"
             download="TaylorPitman_Resume.pdf"
             className="inline-flex justify-center items-center gap-2.5 font-medium transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 bg-zinc-900 text-white  border-2 border-transparent
                  hover:text-zinc-900 hover:border-zinc-900 hover:bg-zinc-50
                 focus:ring-zinc-500 p-2 text-xs  rounded-xl w-full cursor-pointer"
-          >
+          aria-label = "Download my Resume as a PDF">
             Download CV
           </motion.a>
         </div>

@@ -36,8 +36,9 @@ const Experience = () => {
             variants={childVariants}
             >
                 <h1 className="text-2xl font-bold">Work Experience</h1>
-                <a href="/resume/TaylorPitmanResume.pdf" download="TaylorPitman_Resume.pdf"
-                    className="hidden sm:flex ">
+                <a href="/PitmanResume.pdf" download="TaylorPitman_Resume.pdf"
+                    className="hidden sm:flex "
+                    aria-label = "Download my Resume as a PDF">
                     <Button
                         text="Download CV"
                     />

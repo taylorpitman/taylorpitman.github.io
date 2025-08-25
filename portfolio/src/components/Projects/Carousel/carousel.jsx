@@ -1,7 +1,7 @@
 import Card from "./card.jsx";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import arrow from "../../../assets/accordianArrow.svg";
 
 
@@ -63,12 +63,13 @@ const arrowVariants = {
 
 const Carousel = ({ cards }) => {
 
-
-  const [detailsOpen, setDetailsOpen] = useState(false);
+  const carouselRef = useRef(null);
+  const isInView = useInView(carouselRef, { amount: 0.5 }); 
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [openIds, setOpenIds] = useState(() => new Set());
+
     const isOpen = (id) => openIds.has(id);
     const toggle = (id) =>
     setOpenIds(prev => {
@@ -89,18 +90,17 @@ const Carousel = ({ cards }) => {
 
 
   useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(() => {
-      goToNext();
-    }, 4000);
+    if (!isInView || isHovered) return;
+    const interval = setInterval(goToNext, 3000);
     return () => clearInterval(interval);
-  }, [current, isHovered]); 
+  }, [current, isInView, isHovered]);
 
 
 return (
     <div>
         {/* Desktop view */}
         <div
+            ref={carouselRef}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className="hidden sm:flex flex-col items-center justify-center gap-1 relative"

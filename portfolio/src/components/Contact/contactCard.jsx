@@ -44,10 +44,10 @@ const ContactCard = () => {
                         Email Me
                     </a>
 
-                    <div className='flex items-center bg-emerald-100 rounded-3xl p-4 gap-2'>
-                        <span className="relative h-2 w-2 flex items-center" aria-hidden="true">
+                    <div className='flex items-center bg-emerald-100 rounded-3xl  px-4 py-3 sm:p-4 gap-2'>
+                        <span className="relative h-2 w-2 sm:h-3 sm:w-3 flex items-center" aria-hidden="true">
                             <span className="motion-safe:absolute motion-safe:inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
-                            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600 ring-2 ring-emerald-200"></span>
+                            <span className="relative inline-flex h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-emerald-600 ring-2 ring-emerald-200"></span>
                         </span>
                         <p className=' hidden sm:block text-sm text-zinc-600'>Open to opportunities</p>
                         <p className=' sm:hidden text-sm text-zinc-600'>Available</p>
